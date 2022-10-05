@@ -9,7 +9,7 @@ class Transaction(models.Model):
 
     type = models.CharField(max_length=1)
     date = models.DateField()
-    value = models.IntegerField(validators=[MaxValueValidator(9999999999)])
+    value = models.FloatField()
     cpf = models.CharField(max_length=11)
     card = models.CharField(max_length=12)
     hour = models.TimeField()
