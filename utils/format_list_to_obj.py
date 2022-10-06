@@ -11,7 +11,7 @@ def format_hour(str: str) -> datetime:
     return time(int(str[0:2]), int(str[2:4]), int(str[4:6]))
 
 
-def format_list_to_obj(list: list):
+def format_list_to_obj(list: list) -> object:
     obj = []
 
     for item in list:
