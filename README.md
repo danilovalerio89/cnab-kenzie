@@ -28,6 +28,12 @@ Pequena aplicação para upload de arquivo CNAB e armazenamento em um banco de d
 | `store_name`   | `string`                                |
 | `cpf`          | `string`                                |
 
+## Variáveis de Ambiente
+
+Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente no seu .env
+
+`SECRET_KEY`
+
 ## Rodando localmente
 
 Clone o projeto
