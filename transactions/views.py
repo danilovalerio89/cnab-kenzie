@@ -3,8 +3,8 @@ from django.shortcuts import render
 from rest_framework.views import APIView, Request, Response, status
 from stores.models import Store
 from stores.serializers import StoreSerializer
+from utils.format_data import format_data
 from utils.format_list_to_obj import format_list_to_obj
-from utils.formatData import formatData
 
 from transactions.models import Transaction
 
@@ -13,7 +13,7 @@ def upload(request: Request):
     if request.method == "POST":
         uploaded_file = request.FILES["file"]
 
-        file = formatData(uploaded_file)
+        file = format_data(uploaded_file)
         obj = format_list_to_obj(file)
 
         for item in obj:
@@ -36,3 +36,12 @@ def upload(request: Request):
             transaction.save()
 
     return render(request, "cnab.html")
+
+
+class TransactionView(APIView):
+    def get(self, request):
+        store = Store.objects.all()
+
+        serializer = StoreSerializer(store, many=True)
+
+        return Response(serializer.data, status.HTTP_200_OK)

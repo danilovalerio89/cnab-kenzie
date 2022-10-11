@@ -4,6 +4,6 @@ from transactions import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("uploadfile/", views.upload, name="upload")
-    # path("", include("transactions.urls")),
+    path("uploadfile/", views.upload, name="upload"),
+    path("", include("transactions.urls")),
 ]

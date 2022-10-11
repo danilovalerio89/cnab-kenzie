@@ -1,8 +1,7 @@
-import ipdb
 from django.core.files.uploadedfile import InMemoryUploadedFile
 
 
-def formatData(data: InMemoryUploadedFile):
+def format_data(data: InMemoryUploadedFile):
     format_data = data.read().decode()
 
     data_list = format_data.split("\n")
